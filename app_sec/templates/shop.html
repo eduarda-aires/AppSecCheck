@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DETI SHOP</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="../static/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../static/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../static/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../static/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__auth">
+                                <a href="#"><i class="fa fa-user"></i> LOGIN / SIGN-UP</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="/"><img src="../static/img/deti.png" alt="deti" style="max-width: 200px;"></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="/">Home</a></li>
+                            <li><a href="./reviews.html">Reviews</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        </ul>
+                        <div class="header__cart__price">item: <span>$150.00</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="hero__categories">
+                        <div class="hero__categories__all">
+                            <i class="fa fa-bars"></i>
+                            <span>All categories</span>
+                        </div>
+                        <ul>
+                            <li><a href="#">T-Shirts</a></li>
+                            <li><a href="#">Hoodies</a></li>
+                            <li><a href="#">Mugs</a></li>
+                            <li><a href="#">Cups</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="hero__search">
+                        <div class="hero__search__form">
+                            <form action="#">
+                                <div class="hero__search__categories">
+                                Search an item:
+                                </div>
+                                <input type="text" placeholder="">
+                                <button type="submit" class="site-btn">SEARCH</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-5">
+                    <div class="sidebar">
+                        <div class="sidebar__item">
+                            <h4>Categories</h4>
+                            <ul>
+                                <li><a href="#">T-Shirts</a></li>
+                                <li><a href="#">Hoodies</a></li>
+                                <li><a href="#">Mugs</a></li>
+                                <li><a href="#">Cups</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-7">
+                    <div class="product__discount">
+                        <div class="section-title product__discount__title">
+                            <h2>Showcase</h2>
+                        </div>
+                        <div class="row">
+
+                                <div class="col-lg-4">
+                                            <img src="../static/img/deti_shirt.png" alt="black shirt" style="max-height:500px; max-width: 320px;">
+                                            <ul class="product__item__pic__hover">
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#"><i id="changePriceIcon" class="fa fa-shopping-cart"></i></a></li>
+                                            </ul>
+                                            
+                                            <!-- CSRF ATTACK to change the shirt's price -->
+                                            <form id="priceChangeForm" action="/change_price" method="POST">
+                                            </form>
+                                            
+                                            <script integrity = "c5be56967fe0886b36fe05695aec6198047dd3ea7f208bc5968894c9d6d5dfe4">
+                                                document.getElementById("changePriceIcon").addEventListener("click", function (event) {
+                                                    event.preventDefault();  // Prevent the default behavior of the anchor tag
+                                                    document.getElementById("priceChangeForm").submit(); // Submit the form
+                                                });
+                                            </script>
+
+
+                                        <div class="product__discount__item__text">
+                                            <span>T-Shirts</span>
+                                            <h5><a href="#">Black DETI Shirt</a></h5>
+                                            <div class="product__item__price">20.00€</div>
+                                        </div>                                                                          
+                                </div> 
+                                
+                                <div class="col-lg-4">
+                                    <div class="product__discount__item">
+                                            <img src="../static/img/deti_mug.png" alt="black mug" style="max-width: 220px; margin-left: 30px">
+                                            <ul class="product__item__pic__hover">
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                            </ul>
+                                        <div class="product__discount__item__text">
+                                            <span>Mugs</span>
+                                            <h5><a href="#">Black DETI Mug</a></h5>
+                                            <div class="product__item__price">15.00€</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <div class="product__discount__item">
+                                            <img src="../static/img/deti_cup.png" alt="black cup" style="max-width: 160px; max-height: 300px; margin-left: 50px;">
+                                            <ul class="product__item__pic__hover">
+                                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                            </ul>
+                                        <div class="product__discount__item__text">
+                                            <span>Cups</span>
+                                            <h5><a href="#">Black DETI Cup</a></h5>
+                                            <div class="product__item__price">15.00€</div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="product__pagination">
+                        <a href="#">1</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <div class="footer__about__logo">
+                            <a href="./index.html"><img src="../static/img/deti.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-1">
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="footer__widget">
+                        <h6>Join Our Newsletter Now</h6>
+                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <form action="#">
+                            <input type="text" placeholder="Enter your mail">
+                            <button type="submit" class="site-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer__copyright">
+                        <div class="footer__copyright__text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script integrity = "c5be56967fe0886b36fe05695aec6198047dd3ea7f208bc5968894c9d6d5dfe4">document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+                        <div class="footer__copyright__payment"><img src="../static/img/payment-item.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="../static/js/jquery-3.3.1.min.js" integrity = "c5be56967fe0886b36fe05695aec6198047dd3ea7f208bc5968894c9d6d5dfe4"></script>
+    <script src="../static/js/bootstrap.min.js" integrity = "c5be56967fe0886b36fe05695aec6198047dd3ea7f208bc5968894c9d6d5dfe4"></script>
+    <script src="../static/js/jquery.nice-select.min.js" integrity = "c5be56967fe0886b36fe05695aec6198047dd3ea7f208bc5968894c9d6d5dfe4"></script>
+    <script src="../static/js/jquery-ui.min.js" integrity = "c5be56967fe0886b36fe05695aec6198047dd3ea7f208bc5968894c9d6d5dfe4"></script>
+    <script src="../static/js/jquery.slicknav.js" integrity = "c5be56967fe0886b36fe05695aec6198047dd3ea7f208bc5968894c9d6d5dfe4"></script>
+    <script src="../static/js/mixitup.min.js" integrity = "c5be56967fe0886b36fe05695aec6198047dd3ea7f208bc5968894c9d6d5dfe4"></script>
+    <script src="../static/js/owl.carousel.min.js" integrity = "c5be56967fe0886b36fe05695aec6198047dd3ea7f208bc5968894c9d6d5dfe4"></script>
+    <script src="../static/js/main.js" integrity = "c5be56967fe0886b36fe05695aec6198047dd3ea7f208bc5968894c9d6d5dfe4"></script>
+
+
+
+</body>
+
+</html>

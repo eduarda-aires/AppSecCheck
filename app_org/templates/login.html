@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .login-container {
+            max-width: 300px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .logo {
+            margin-bottom: 30px;
+        }
+
+        .logo img {
+            width: 150px; /* Adjust the width of the logo as needed */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .form-group input[type="username"],
+        .form-group input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+
+        .form-group .signup-link {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+  
+    <div class="login-container">
+        <h2>Welcome Back!</h2>
+        <form id="loginForm" method="POST">
+            <br><br>
+
+            <input type="username" name="username" id="username" placeholder="Username" required>
+
+            <br><br>
+
+            <input type="password" name="password" id="password" placeholder="Password" required>
+
+            <br><br>
+
+            <input type="submit" value="Login">
+
+            <br><br>
+
+            
+        </form>
+        {% if error %}
+            <div class="alert alert-danger" style= "color:red" >
+                {{ error }}
+            </div>
+        {% endif %}
+        <div class="form-group">
+            <a class="signup-link" href="/signup">Don't have an account? Sign up here</a>
+        </div>
+    </div>
+<!-- 
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const usernameError = document.getElementById('usernameError');
+        const passwordError = document.getElementById('passwordError');
+
+        loginForm.addEventListener('submit', function(event) {
+            let isValid = true;
+
+            // Simple email validation (checking for @ symbol)
+            if (!emailInput.value.includes('@')) {
+                emailError.textContent = 'Invalid email format';
+                isValid = false;
+            } else {
+                emailError.textContent = '';
+            }
+
+            // Password length validation (minimum 6 characters)
+            if (passwordInput.value.length < 6) {
+                passwordError.textContent = 'Password must be at least 6 characters';
+                isValid = false;
+            } else {
+                passwordError.textContent = '';
+            }
+
+            if (!isValid) {
+                event.preventDefault(); // Prevent form submission if validation fails
+            }
+        });
+    </script> -->
+</body>
+
+</html>
